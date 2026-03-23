@@ -43,7 +43,7 @@ Backend engineer with deep expertise in Java and the Spring ecosystem. I special
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/jzavalaq)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/juanzavalaq)
 
 ---
 
