@@ -95,7 +95,7 @@ flowchart TB
 
 | Project | Description | Tech Highlights |
 |---------|-------------|-----------------|
-| [cqrs-event-sourcing-ledger](https://github.com/jzavalaq/cqrs-event-sourcing-ledger) | Banking ledger implementing **CQRS and Event Sourcing** patterns with Axon Framework, event replay, and complete audit trail | **Axon Framework**, CQRS, Event Sourcing, DDD |
+| [cqrs-event-sourcing-ledger](https://github.com/jzavalaq/cqrs-event-sourcing-ledger) | Banking ledger implementing **CQRS and Event Sourcing** patterns with custom event store, command/query separation, and complete audit trail | **CQRS**, Event Sourcing, DDD, PostgreSQL |
 | [search-analytics-elasticsearch-api](https://github.com/jzavalaq/search-analytics-elasticsearch-api) | Full-text search and analytics API with **Elasticsearch 8.x** integration, fuzzy matching, and search analytics | **Elasticsearch 8.x**, Full-Text Search, Redis |
 | [banking-financial-api](https://github.com/jzavalaq/banking-financial-api) | Complete banking system with multi-currency accounts, SWIFT/SEPA transfers, fraud detection, loans, and KYC compliance | Spring Boot 3.2, JWT, PostgreSQL, Flyway, K8s |
 | [notification-hub-api](https://github.com/jzavalaq/notification-hub-api) | Multi-channel notification platform supporting email, SMS, push notifications with Redis caching and **WebSocket real-time** | Spring Boot, Redis, WebFlux, **WebSocket/STOMP** |
