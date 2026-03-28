@@ -39,6 +39,8 @@ flowchart TB
     end
 
     subgraph "Microservices Layer"
+        Ledger[CQRS Ledger]
+        Search[Search Analytics]
         Banking[Banking Service]
         Notification[Notification Hub]
         Commerce[E-Commerce Platform]
@@ -60,11 +62,14 @@ flowchart TB
     Mobile --> GW
     External --> GW
 
+    GW --> Ledger
+    GW --> Search
     GW --> Banking
     GW --> Notification
     GW --> Commerce
     GW --> Loan
 
+    Ledger <--> Kafka
     Banking <--> Kafka
     Notification <--> Kafka
     Commerce <--> Kafka
@@ -72,6 +77,7 @@ flowchart TB
 
     Notification <--> WebSocket
 
+    Ledger --> PostgreSQL
     Banking --> PostgreSQL
     Commerce --> PostgreSQL
     Loan --> PostgreSQL
@@ -79,6 +85,7 @@ flowchart TB
     Notification --> Redis
     Banking --> Redis
 
+    Search --> ES
     Banking --> ES
 ```
 
@@ -88,6 +95,8 @@ flowchart TB
 
 | Project | Description | Tech Highlights |
 |---------|-------------|-----------------|
+| [cqrs-event-sourcing-ledger](https://github.com/jzavalaq/cqrs-event-sourcing-ledger) | Banking ledger implementing **CQRS and Event Sourcing** patterns with Axon Framework, event replay, and complete audit trail | **Axon Framework**, CQRS, Event Sourcing, DDD |
+| [search-analytics-elasticsearch-api](https://github.com/jzavalaq/search-analytics-elasticsearch-api) | Full-text search and analytics API with **Elasticsearch 8.x** integration, fuzzy matching, and search analytics | **Elasticsearch 8.x**, Full-Text Search, Redis |
 | [banking-financial-api](https://github.com/jzavalaq/banking-financial-api) | Complete banking system with multi-currency accounts, SWIFT/SEPA transfers, fraud detection, loans, and KYC compliance | Spring Boot 3.2, JWT, PostgreSQL, Flyway, K8s |
 | [notification-hub-api](https://github.com/jzavalaq/notification-hub-api) | Multi-channel notification platform supporting email, SMS, push notifications with Redis caching and **WebSocket real-time** | Spring Boot, Redis, WebFlux, **WebSocket/STOMP** |
 | [api-rate-limiting-gateway](https://github.com/jzavalaq/api-rate-limiting-gateway) | Reactive API gateway with token bucket rate limiting algorithm | **Spring WebFlux**, Bucket4j, Resilience4j |
